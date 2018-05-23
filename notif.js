@@ -10,11 +10,11 @@ var privateKey = 'PGA-MVg1_f_4SpBEIUcj7nFmzAtetus0MPG-K_FLTxM'
 var pushSubscription = {
   endpoint:
     'https://fcm.googleapis.com/fcm/send/fUHaCIQzXTc:APA91bEKw4Ak0dBmpP8hkqLjin7pEa9iaP-q92TA3rvpwDnDoF8NNOlzyplQNsVqRmWW-cho3hbOD3LQhDTGKjghw_FWTDySX0XEqeudwGzD4APhSs5KeOqzJRnVJaZOShzR5bzlija8',
-  // keys: {
-  //   p256dh:
-  //     'BOONgbA1ZayXMs0CndLWco7Y5it8JFRqrAsGuARoqnB426GXBYnySfw0HOabKMf88LRdPwdz76NhFbtvqkXOIJs',
-  //   auth: 'PGA-MVg1_f_4SpBEIUcj7nFmzAtetus0MPG-K_FLTxM',
-  // },
+  keys: {
+    p256dh:
+      'BIxwat3EAYKKN45h9qFSLcga3vpfVra_fTl59JLs1iMaFLP-sd39pL1e09wj_XFbrUIB06moTRtHLMOd0VjRXIc',
+    auth: 'wGREPH_IyWZp5vkeQkw3Pg',
+  },
 }
 
 var payload = 'Here is a payload!'
@@ -37,7 +37,7 @@ app.listen(9010, () => {
 
 function mainApp() {
   webPush
-    .sendNotification(pushSubscription, null, options)
+    .sendNotification(pushSubscription, payload, options)
     .then(e => console.log('done: ', e))
     .catch(e => console.log(e))
 }
